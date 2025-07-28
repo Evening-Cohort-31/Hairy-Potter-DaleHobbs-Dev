@@ -2,6 +2,7 @@
 import { makePottery } from "./PotteryWheel.js";
 import { firePottery } from "./Kiln.js";
 import { toSellOrNotToSell, usePottery } from "./PotteryCatalog.js";
+import { PotteryList } from "./PotteryList.js";
 
 // Make 5 pieces of pottery at the wheel
 // makePottery(shape,weight,height)
@@ -28,6 +29,18 @@ toSellOrNotToSell(firedBowl);
 toSellOrNotToSell(firedPicture);
 console.log(toSellOrNotToSell(firedPlate));
 let piecesToSell = usePottery();
+
 console.log(piecesToSell);
 
+console.log(PotteryList(piecesToSell));
+
+debugger;
+
 // Invoke the component function that renders the HTML list
+const potteryToSellArticle = document.querySelector(".potteryList");
+
+if (potteryToSellArticle) {
+  potteryToSellArticle.innerHTML = PotteryList(piecesToSell);
+} else {
+  console.error('Could not find element with class "potteryList"');
+}
