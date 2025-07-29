@@ -32,9 +32,9 @@ let piecesToSell = usePottery();
 
 console.log(piecesToSell);
 
-console.log(PotteryList(piecesToSell));
-
 debugger;
+
+console.log(PotteryList(piecesToSell));
 
 // Invoke the component function that renders the HTML list
 const potteryToSellArticle = document.querySelector(".potteryList");

@@ -119,12 +119,20 @@ In the `main.js` module, invoke the `PotteryList` component function. Take its r
 > 🧨 Before you click the "Assessment Complete" button on the Learning Platform, add your answers below for each question and make a commit. It is your option to request a face-to-face meeting with a coach for a vocabulary review.
 
 1. Explain how you got the HTML, with the correct data, displayed in the browser?
-   > Your answer here
+   > The HTML was displayed in the browser following 6 simple steps:
+   step 1: function "makePottery" was imported from PotteryWheel.js to be invoked making 5 different pottery objects with a "shape", "weight" and "height" key and key value.
+   step 2: the function "firePottery" was imported from Kiln.js to be invoked on each created pottery object adding a new keys of "fired" and "cracked" to each object.
+   step 3: the function "toSellOrNotToSell" is imported from "PotteryCatalog.js" to take each object that is NOT cracked, give it a "price" key and key value, and then push it to an array full of objects we plan to sell. 
+   step 4: the function "usePottery" (also imported from PotteryCatalog.js) gives us the array of pottery objects that will go up for sale.
+   step 5: the function "PotteryList" from PotteryList.js takes our array of pottery objects to sell and turns them into an HTML string (essentially).
+   step 6: We lastly find the first DOM element with the class "potteryList" using the querySelector method (used on "document" objects) and inject the HTML string into the "innerHTML" using the .innerHTML property for HTML elements.
 2. In the **PotteryList** module, when you iterate your pottery, you need to show the evidence of what the **weight** property's value is for the 2nd piece of pottery. Use [Loom](https://www.loom.com/) to record your browser window with the developer tools open and show those values.
    > Paste your video's public URL here
+   https://www.loom.com/share/f558b73fe56a4819aa60a25c5bb860c4?sid=1b90cca8-dac5-4467-9842-b3f25a848cad
 3. The **PotteryWheel** module has a single function named `makePottery`. Why doesn't that module have all of the other code in it?
-   > Your answer here
+   > Modern Software Development emphasizes "modularization", which means organizing code into small focused modules that each handle a specific responsibility. For instance, The PotteryWheel module only has the "makePottery" function b/c its sole responsibility is ot create pottery objects. Other responsibilities (like firing the pottery, determining if pottery is sellable, etc) are handled by separate modules - for example, Kiln.js, which has the singular function "firePottery" taking the object and a temperature argument to augment the original pottery object with new key/key values. 
 4. The pottery shop has learned that there is a set of customers that are willing to buy cracked pottery at a discounted price of $2.50. That means that the cracked pottery should now be displayed in the catalog. Explain the changes that this new business strategy would cause to your algorithm.
-   > Your answer here
+   > If I am now selling cracked pottery, I will have to update some of my "if/elseif" logic adding a new condition that looks at if the value of "cracked === true" and setting it a "price" key with the value 2.5. 
 5. In the **Kiln** module, you have a `firePottery()` function. You need to demonstrate how to use the debugger to verify the values of the parameters for that function when your code runs. Use [Loom](https://www.loom.com/) to record your browser window with the developer tools open and show those values.
    > Paste your video's public URL here
+   https://www.loom.com/share/bcfcf6c1f3a4449d9c7bf0df0e64b527?sid=60df1077-a339-43fc-8ed1-58d92238a22c
